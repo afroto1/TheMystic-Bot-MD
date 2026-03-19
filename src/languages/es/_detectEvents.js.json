@@ -1,41 +1,41 @@
 {
     "_detectevents": {
         "promote": {
-            "header": "*Recientemente se ha promovido un miembro a administrador*",
-            "group": "*◦ Grupo:* @group",
-            "new_admin": "*◦ Nuevo admin:* @user",
-            "executed_by": "*◦ Ejecutado por:* @user"
+            "header": "*تم ترقية عضو إلى مشرف*",
+            "group": "*◦ المجموعة:* @group",
+            "new_admin": "*◦ المشرف الجديد:* @user",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "demote": {
-            "header": "*Recientemente se ha degradado un administrador a miembro*",
-            "group": "*◦ Grupo:* @group",
-            "removed_admin": "*◦ Se quitó a:* @user",
-            "executed_by": "*◦ Ejecutado por:* @user"
+            "header": "*تم تخفيض مشرف إلى عضو*",
+            "group": "*◦ المجموعة:* @group",
+            "removed_admin": "*◦ المشرف المزال:* @user",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "member_add": {
-            "header": "*Recientemente se ha incorporado un nuevo miembro*",
-            "group": "*◦ Grupo:* @group",
-            "added_user": "*◦ Se añadió a:* @user",
-            "added_by": "*◦ Añadido por:* @user",
-            "self_added": "*◦ Se unió:* @user"
+            "header": "*تمت إضافة عضو جديد إلى المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "added_user": "*◦ العضو المضاف:* @user",
+            "added_by": "*◦ تمت الإضافة بواسطة:* @user",
+            "self_added": "*◦ انضم:* @user"
         },
         "member_remove": {
-            "header": "*Recientemente se ha eliminado un miembro del grupo*",
-            "group": "*◦ Grupo:* @group",
-            "removed_user": "*◦ Se eliminó a:* @user",
-            "removed_by": "*◦ Eliminado por:* @user",
-            "self_removed": "*◦ Se salió:* @user"
+            "header": "*تم إزالة عضو من المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "removed_user": "*◦ العضو المزال:* @user",
+            "removed_by": "*◦ تمت الإزالة بواسطة:* @user",
+            "self_removed": "*◦ غادر:* @user"
         },
         "group_settings": {
-            "header": "*Recientemente se han modificado los ajustes del grupo*",
-            "group": "*◦ Grupo:* @group",
-            "action": "*◦ El grupo se ha:* @action",
-            "executed_by": "*◦ Ejecutado por:* @user"
+            "header": "*تم تعديل إعدادات المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "action": "*◦ الحالة الجديدة:* @action",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "group_name": {
-            "header": "*Recientemente se ha cambiado el nombre del grupo*",
-            "new_name": "*◦ Nuevo nombre:* @name",
-            "executed_by": "*◦ Ejecutado por:* @user"
+            "header": "*تم تغيير اسم المجموعة*",
+            "new_name": "*◦ الاسم الجديد:* @name",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         }
     }
 }
