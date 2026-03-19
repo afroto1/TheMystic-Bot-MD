@@ -1,28 +1,20 @@
-const handler = async (m, { conn, text, usedPrefix, command }) => {
-  const datas = global;
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje;
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`));
-  const tradutor = _translate.plugins.downloader_imagen;
+import {googleImage} from '@bochilteam/scraper';
 
-  if (!text) {
-    return m.reply(`${tradutor.texto1} ${usedPrefix + command} Minecraft*`);
-  }
+const handler = async (m, {conn, text, usedPrefix, command}) => {
+  const datas = global
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.plugins.downloader_imagen
 
-  const api = await axios.get(`${global.BASE_API_DELIRIUS}/search/gimage?query=${text}`);
-  const data = api.data.data;
-  const filteredData = data.filter(image => {
-    const url = image.url.toLowerCase();
-    return url.endsWith('.jpg') || url.endsWith('.jpeg') || url.endsWith('.png');
-  });
 
-  const random = Math.floor(Math.random() * filteredData.length);
-  const image = filteredData[random];
-
-  conn.sendFile(m.chat, image.url, 'error.jpg', `${tradutor.texto2[0]} ${text}\n${tradutor.texto2[1]} ${image.origin.website.url}\n${tradutor.texto2[2]}`, m);
+  if (!text) throw `${tradutor.texto1} ${usedPrefix + command} Minecraft*`;
+  //if (m.text.includes('gore') || m.text.includes('cp')|| m.text.includes('porno')|| m.text.includes('Gore')|| m.text.includes('rule')|| m.text.includes('CP')|| m.text.includes('Rule34')) return m.reply('[❗𝐈𝐍𝐅𝐎❗] 𝙽𝙾 𝙿𝚄𝙴𝙳𝙾 𝙴𝙽𝚅𝙸𝙰𝚁 𝙴𝚂𝚃𝙴 𝙲𝙾𝙽𝚃𝙴𝙽𝙸𝙴𝙽𝙳𝙾 𝙴𝚂𝚃𝙰 𝙿𝚁𝙾𝙷𝙸𝙱𝙸𝙳𝙾 𝙴𝙻 𝙶𝚁𝚄𝙿𝙾\n𝚂𝙸 𝙴𝚂 𝙰𝙳𝙼𝙸𝙽 𝚈 𝙳𝙴𝚂𝙴𝙰 𝙰𝙲𝚃𝙸𝚅𝙰𝚁𝙻𝙾𝚂 𝚄𝚂𝙴 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 #enable modohorny');
+  const res = await googleImage(text);
+  const image = await res.getRandom();
+  const link = image;
+  conn.sendFile(m.chat, link, 'error.jpg', `${tradutor.texto2[0]} ${text}\n${tradutor.texto2[1]} ${link}\n${tradutor.texto2[2]}`, m);
 };
-
-handler.help = ['image'];
+handler.help = ['gimage <query>', 'imagen <query>'];
 handler.tags = ['internet', 'tools'];
-handler.command = ['imagen', 'gimage', 'image'];
-
+handler.command = /^(gimage|image|imagen)$/i;
 export default handler;

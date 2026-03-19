@@ -1,20 +1,14 @@
-// TheMystic-Bot-MD@BrunoSobrino - _antiprivado.js
+ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }) {
+if (m.isBaileys && m.fromMe) return !0
+if (m.isGroup) return !1
+if (!m.message) return !0 
+if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||  m.text.includes('estado') || m.text.includes('bots') || m.text.includes('deletebot') ||  m.text.includes('eliminarsesion') ||  m.text.includes('deletesesion') || m.text.includes('serbot') || m.text.includes('jadibot')) return !0
+let chat = global.db.data.chats[m.chat]
+let user = global.db.data.users[m.sender]
+let bot = global.db.data.settings[this.user.jid] || {}
+if (bot.antiPrivate && !isOwner && !isROwner) {
+await m.reply(`Hola *@${m.sender.split`@`[0]}*, Esta prohibido usar el bot el privado\n\n✴️solo si quiere hacerte un bot manda el comando .serbot\n\n🚫NO USAR LOS COMANDO DEL BOT AL PV🚫\n\nPara usar el bot unirte al grupo del oficial del el bot\n${nn}`, false, { mentions: [m.sender] })
+await conn.groupParticipantsUpdate(m.chat, [m.sender], 'banchat')
+return !1
+}}
 
-export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) {
-    const datas = global
-    const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje || 'es'
-    const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
-    const tradutor = _translate.plugins._antiprivado
-
-  if (m.isBaileys && m.fromMe) return !0;
-  if (m.isGroup) return !1;
-  if (!m.message) return !0;
-  if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') || m.text.includes('serbot') || m.text.includes('jadibot')) return !0;
-  const chat = global.db.data.chats[m.chat];
-  const bot = global.db.data.settings[this.user.jid] || {};
-  if (bot.antiPrivate && !isOwner && !isROwner) {
-    await m.reply(tradutor.texto1, false, {mentions: [m.sender]});
-    await this.updateBlockStatus(m.chat, 'block');
-  }
-  return !1;
-}
