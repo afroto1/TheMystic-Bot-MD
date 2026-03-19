@@ -1,14 +1,14 @@
-import MessageType from "baileys";
+import MessageType from '@whiskeysockets/baileys';
 
 const pajak = 0;
 const handler = async (m, {conn, text}) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.onwer_anadirXP
 
   let who;
-  if (m.isGroup) who = await await m.mentionedJid[0];
+  if (m.isGroup) who = m.mentionedJid[0];
   else who = m.chat;
   if (!who) throw tradutor.texto1;
   const txt = text.replace('@' + who.split`@`[0], '').trim();

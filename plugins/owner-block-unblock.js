@@ -1,12 +1,12 @@
 
 const handler = async (m, {text, conn, usedPrefix, command}) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.owner_block_unblock
 
   const why = `${tradutor.texto1} ${usedPrefix + command} @${m.sender.split('@')[0]}*`;
-  const who = await await m.mentionedJid[0] ? await await m.mentionedJid[0] : m.quoted ? await m?.quoted?.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false;
+  const who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false;
   if (!who) conn.reply(m.chat, why, m, {mentions: [m.sender]});
   const res = [];
   switch (command) {

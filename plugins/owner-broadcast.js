@@ -5,8 +5,8 @@ import {randomBytes} from 'crypto';
 
 const handler = async (m, {conn, command, participants, usedPrefix, text}) => {
   const datas = global
-    const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-    const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+    const idioma = datas.db.data.users[m.sender].language
+    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
     const tradutor = _translate.plugins.owner_broadcast
 
   if (!text) return tradutor.texto1;
@@ -75,7 +75,7 @@ contextInfo: { externalAdReply: {
 title: 'ᴄᴏᴍᴜɴɪᴄᴀᴅᴏ ᴏғɪᴄɪᴀʟ ᴀ ᴛᴏᴅᴏs ʟᴏs ᴄʜᴀᴛs',
 body: 'ʙʏ ᴛʜᴇ ᴍʏsᴛɪᴄ ﹣ ʙᴏᴛ',
 sourceUrl: `https://github.com/BrunoSobrino/TheMystic-Bot-MD`,
-thumbnail: fs.readFileSync('./src/assets/images/menu/languages/es/menu.png') }}})}
+thumbnail: fs.readFileSync('./Menu2.jpg') }}})}
 }
 m.reply(`*[❗𝐈𝐍𝐅𝐎❗] 𝙼𝙴𝙽𝚂𝙰𝙹𝙴 𝙴𝙽𝚅𝙸𝙰𝙳𝙾 𝙰 𝚃𝙾𝙳𝙾𝚂 𝙻𝙾𝚂 𝙲𝙷𝙰𝚃𝚂*\n\n*𝐍𝐎𝐓𝐀: 𝙴𝚂 𝙿𝙾𝚂𝙸𝙱𝙻𝙴 𝚀𝚄𝙴 𝚃𝙴𝙽𝙶𝙰 𝙵𝙰𝙻𝙻𝙾𝚂 𝙴𝚂𝚃𝙴 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 𝚈 𝙽𝙾 𝚂𝙴 𝙴𝙽𝚅𝙸𝙴 𝙰 𝚃𝙾𝙳𝙾𝚂 𝙻𝙾𝚂 𝙲𝙷𝙰𝚃𝚂, 𝙳𝙸𝚂𝙲𝚄𝙻𝙿𝙴 𝙿𝙾𝚁 𝙴𝙻 𝙼𝙾𝙼𝙴𝙽𝚃𝙾*`)
 }
