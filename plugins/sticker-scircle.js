@@ -1,11 +1,11 @@
-import uploadImage from '../src/libraries/uploadImage.js';
-import {sticker} from '../src/libraries/sticker.js';
+import uploadImage from '../lib/uploadImage.js';
+import {sticker} from '../lib/sticker.js';
 
 
 const handler = async (m, {conn, text}) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.sticker_scircle
 
   try {
@@ -20,8 +20,6 @@ const handler = async (m, {conn, text}) => {
     m.reply(tradutor.texto1);
   }
 };
-handler.help = ['scircle <img>'];
-handler.tags = ['sticker'];
 handler.command = /^scircle|circle$/i;
 export default handler;
 /* `https://api.dhamzxploit.my.id/api/canvas/circle?url=${url}` */

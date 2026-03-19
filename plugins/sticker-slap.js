@@ -1,16 +1,16 @@
-import {sticker} from "../src/libraries/sticker.js";
+import {sticker} from "../lib/sticker.js";
 import fetch from "node-fetch";
 
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.sticker_slap
 
     let who;
     if (m.isGroup) {
-      who = await await m.mentionedJid[0] ? await await m.mentionedJid[0] : m.quoted ? await m?.quoted?.sender : false;
+      who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
     } else { 
       who = m.chat;
     }
@@ -33,7 +33,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
     throw tradutor.texto2;
   };
 };
-handler.help = ["slap <@tag>"];
-handler.tags = ['sticker'];
+handler.help = ["slap"];
+handler.tags = ["General"];
 handler.command = /^(slap|bofetada)$/i;
 export default handler;

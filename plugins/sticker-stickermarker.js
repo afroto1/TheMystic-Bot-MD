@@ -1,13 +1,13 @@
-import uploadImage from '../src/libraries/uploadImage.js';
-import {sticker} from '../src/libraries/sticker.js';
-import MessageType from "baileys";
+import uploadImage from '../lib/uploadImage.js';
+import {sticker} from '../lib/sticker.js';
+import MessageType from '@whiskeysockets/baileys';
 
 const effects = ['jail', 'gay', 'glass', 'wasted', 'triggered', 'lolice', 'simpcard', 'horny'];
 
 const handler = async (m, {conn, usedPrefix, text}) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.sticker_stickermarker
 
   const effect = text.trim().toLowerCase();
@@ -39,6 +39,6 @@ ${effects.map((effect) => `_> ${effect}_`).join('\n')}
   }
 };
 handler.help = ['stickmaker (caption|reply media)'];
-handler.tags = ['sticker'];
+handler.tags = ['General'];
 handler.command = /^(stickmaker|stickermaker|stickermarker|cs)$/i;
 export default handler;
