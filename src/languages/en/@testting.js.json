@@ -1,26 +1,26 @@
 {
     "_testting": {
         "errors": {
-            "no_query": "*[❗] Example: @command Beggin You*",
-            "no_results": "*[❗] No results found.*",
-            "generic": "*[❗] Error: @error*",
-            "large_audio": "*[❗] Large audio file detected*\n*Size:* @size MB\n*Sending as document (>50 MB)*\n\n⏳ *May take a moment...*",
-            "large_video": "*[❗] Large video file detected*\n*Size:* @size MB\n*Sending as document (>100 MB)*\n\n⏳ *May take a moment...*"
+            "no_query": "*[❗] مثال: @command Beggin You*",
+            "no_results": "*[❗] لم يتم العثور على نتائج*",
+            "generic": "*[❗] خطأ: @error*",
+            "large_audio": "*[❗] تم اكتشاف ملف صوتي كبير*\n*الحجم:* @size ميجابايت\n*جاري الإرسال كمستند (>50 ميجابايت)*\n\n⏳ *قد يستغرق بعض الوقت...*",
+            "large_video": "*[❗] تم اكتشاف ملف فيديو كبير*\n*الحجم:* @size ميجابايت\n*جاري الإرسال كمستند (>100 ميجابايت)*\n\n⏳ *قد يستغرق بعض الوقت...*"
         },
         "video_info": {
-            "header": "_*< DOWNLOADS - PLAY />*_",
-            "title": "▢ *Title:* @title",
-            "author": "▢ *Channel:* @author",
-            "duration": "▢ *Duration:* @duration",
-            "views": "▢ *Views:* @views",
-            "published": "▢ *Published:* @published",
-            "id": "▢ *ID:* @id",
-            "link": "▢ *Link:* @link",
-            "processing": "*[ ℹ️ ] Processing @type...*"
+            "header": "_*< تنزيلات - تشغيل />*_",
+            "title": "▢ *العنوان:* @title",
+            "author": "▢ *القناة:* @author",
+            "duration": "▢ *المدة:* @duration",
+            "views": "▢ *المشاهدات:* @views",
+            "published": "▢ *تاريخ النشر:* @published",
+            "id": "▢ *المعرف:* @id",
+            "link": "▢ *الرابط:* @link",
+            "processing": "*[ ℹ️ ] جاري معالجة @type...*"
         },
         "success": {
-            "audio": "*[ 🔊 ] AUDIO DOWNLOADED*",
-            "video": "*[ 🎥 ] VIDEO DOWNLOADED*"
+            "audio": "*[ 🔊 ] تم تنزيل الصوت*",
+            "video": "*[ 🎥 ] تم تنزيل الفيديو*"
         }
     }
 }
