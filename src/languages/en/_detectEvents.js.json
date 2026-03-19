@@ -1,41 +1,42 @@
 {
     "_detectevents": {
         "promote": {
-            "header": "*A member has been promoted to administrator*",
-            "group": "*◦ Group:* @group",
-            "new_admin": "*◦ New admin:* @user",
-            "executed_by": "*◦ Executed by:* @user"
+            "header": "*تم ترقية عضو إلى مشرف*",
+            "group": "*◦ المجموعة:* @group",
+            "new_admin": "*◦ المشرف الجديد:* @user",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "demote": {
-            "header": "*An administrator has been demoted to member*",
-            "group": "*◦ Group:* @group",
-            "removed_admin": "*◦ Admin removed:* @user",
-            "executed_by": "*◦ Executed by:* @user"
+            "header": "*تم تخفيض مشرف إلى عضو*",
+            "group": "*◦ المجموعة:* @group",
+            "removed_admin": "*◦ المشرف المزال:* @user",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "member_add": {
-            "header": "*A new member has joined the group*",
-            "group": "*◦ Group:* @group",
-            "added_user": "*◦ Added user:* @user",
-            "added_by": "*◦ Added by:* @user",
-            "self_added": "*◦ Joined:* @user"
+            "header": "*تمت إضافة عضو جديد إلى المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "added_user": "*◦ العضو المضاف:* @user",
+            "added_by": "*◦ تمت الإضافة بواسطة:* @user",
+            "self_added": "*◦ انضم:* @user"
         },
         "member_remove": {
-            "header": "*A member has been removed from the group*",
-            "group": "*◦ Group:* @group",
-            "removed_user": "*◦ Removed user:* @user",
-            "removed_by": "*◦ Removed by:* @user",
-            "self_removed": "*◦ Left:* @user"
+            "header": "*تم إزالة عضو من المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "removed_user": "*◦ العضو المزال:* @user",
+            "removed_by": "*◦ تمت الإزالة بواسطة:* @user",
+            "self_removed": "*◦ غادر:* @user"
         },
         "group_settings": {
-            "header": "*Group settings have been modified*",
-            "group": "*◦ Group:* @group",
-            "action": "*◦ New status:* @action",
-            "executed_by": "*◦ Executed by:* @user"
+            "header": "*تم تعديل إعدادات المجموعة*",
+            "group": "*◦ المجموعة:* @group",
+            "action": "*◦ الحالة الجديدة:* @action",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         },
         "group_name": {
-            "header": "*The group name has been changed*",
-            "new_name": "*◦ New name:* @name",
-            "executed_by": "*◦ Executed by:* @user"
+            "header": "*تم تغيير اسم المجموعة*",
+            "new_name": "*◦ الاسم الجديد:* @name",
+            "executed_by": "*◦ تمت بواسطة:* @user"
         }
     }
 }
+
