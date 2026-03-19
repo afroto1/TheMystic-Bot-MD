@@ -5,8 +5,8 @@ let crime = 500
 let diamante = 10
 const handler = async (m, { conn, usedPrefix, command, groupMetadata, participants, isPrems }) => {
   const datas = global
-  const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje
-  const _translate = JSON.parse(fs.readFileSync(`./src/languages/${idioma}.json`))
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.rpg_crime
 
   global.robar = tradutor.texto4;
@@ -16,7 +16,7 @@ const handler = async (m, { conn, usedPrefix, command, groupMetadata, participan
   const date = global.db.data.users[m.sender].crime + 3600000; //3600000 = 1 hs
   if (new Date - global.db.data.users[m.sender].crime < 3600000) return m.reply(`${tradutor.texto1} ${msToTime(date - new Date())}`)
   let randow
-  if (m.isGroup) randow = await await m.mentionedJid[0] ? await await m.mentionedJid[0] : m.quoted ? await m?.quoted?.sender : false
+  if (m.isGroup) randow = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
   else randow = m.chat
   try {
     let ps = groupMetadata.participants.map(v => v.id)
